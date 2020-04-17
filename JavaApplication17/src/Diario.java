@@ -307,10 +307,10 @@ try { Connection cn;
             String ID = txtppp1.getText().trim();
             
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/fm", "root", "");
-            PreparedStatement pst = cn.prepareStatement("update diarios set codigo = ?, descuento = ?, descripcion = ? ,porcentaje = ?, fechai = ?, fechaf = ?where id = " + ID);
+            PreparedStatement pst = cn.prepareStatement("update diarios set descuento = ?,descripcion = ?,nombre = ?,fechai = ?,fechaf = ?where id = " + ID);
           
             pst.setString(1, (String) txtfipp1.getText());
-            pst.setString(2, txtfipp.getText());
+            pst.setString(2, (String) txtfipp.getText());
             pst.setString(3, (String) txtcpp1.getText());
             pst.setString(4, (String) txtdp1.getText());
              pst.setString(5, (String) txtppp1.getText());
@@ -328,7 +328,7 @@ try { Connection cn;
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 try {
              Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/fm", "root", "");
-            PreparedStatement pst = cn.prepareStatement("delete diarios where codigo = ?");
+            PreparedStatement pst = cn.prepareStatement("delete diarios where id = ?");
             
             pst.setString(1, txtppp1.getText().trim());
             pst.executeUpdate();
