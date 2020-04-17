@@ -234,7 +234,7 @@ public class CD extends javax.swing.JFrame {
                  txtp.setText(rs.getString("precio"));
                 txtpp.setText(rs.getString("Grupo"));
             } else {
-                JOptionPane.showMessageDialog(null, "Alumno no registrado.");
+              
             }
             
         }catch (Exception e){
@@ -285,6 +285,7 @@ try {
             ta.setText("Registro eliminado.");
             
         } catch (Exception e) {
+               ta.setText("error.");
         }
 
 
